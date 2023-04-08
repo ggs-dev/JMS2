@@ -158,10 +158,7 @@ const playText = (textObj) => {
 
 
 const startTwitchClient = async () => {
-  const metaphoneModule = await import('double-metaphone');
-  metaphone = metaphoneModule.doubleMetaphone;
-
-  const client = new tmi.Client({
+ const client = new tmi.Client({
     options: { debug: true },
     connection: {
       reconnect: true,
