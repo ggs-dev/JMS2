@@ -37,12 +37,12 @@ This project is a Twitch chat bot that converts chat messages into Text-to-Speec
 `yarn`
 
 
-4. Create a `.env` file in the project root directory and set the following environment variables:
+4. Create a `.env` file in the project root directory (or rename the .env.example) and set the following environment variables:
 
 ```
-TWITCH_USERNAME=<your_twitch_username>
-TWITCH_OAUTH_TOKEN=<your_twitch_oauth_token>
-TWITCH_CHANNEL=<channel_to_join>
+TWITCH_USERNAME = <your_twitch_username>
+TWITCH_OAUTH_TOKEN = <your_twitch_oauth_token>
+TWITCH_CHANNEL = <channel_to_join>
 ```
 
 Replace `<your_twitch_username>`, `<your_twitch_oauth_token>`, and `<channel_to_join>` with the respective values.
