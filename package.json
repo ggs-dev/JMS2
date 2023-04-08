@@ -1,0 +1,17 @@
+{
+  "name": "jms2",
+  "version": "1.0.0",
+  "description": "John Madden Simulator 2",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "tmi.js": "^1.8.5",
+    "bad-words": "^3.0.4",
+    "fast-levenshtein": "^3.0.0",
+    "dotenv": "^10.0.0"
+  }
+}
