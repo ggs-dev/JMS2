@@ -30,7 +30,7 @@ customBadWords.forEach((word) => {
   badWordsFilter.addWords(word);
 });
 
-const whitelist = ['hello'];
+const whitelist = ['hello', 'funny', 'picks', 'shine', 'meets', 'where', 'space','ships'];
 
 const filterBadWordsWithLevenshtein = (text) => {
   const words = text.split(' ');
@@ -156,6 +156,30 @@ const playText = (textObj) => {
   }
 };
 
+const handleModeChange = (command, username) => {
+  const mode = command.split(' ')[1];
+
+  if (username === channelName) {
+    switch (mode) {
+      case 'skip':
+        currentMode = MODE_SKIP;
+        console.log(`Mode changed to: SKIP`);
+        break;
+      case 'chaos':
+        currentMode = MODE_CHAOS;
+        console.log(`Mode changed to: CHAOS`);
+        break;
+      case 'queue':
+        currentMode = MODE_QUEUE;
+        console.log(`Mode changed to: QUEUE`);
+        break;
+      default:
+        console.log(`Invalid mode: ${mode}`);
+    }
+  } else {
+    console.log(`User ${username} is not authorized to change the mode.`);
+  }
+};
 
 const startTwitchClient = async () => {
  const client = new tmi.Client({
@@ -177,6 +201,11 @@ const startTwitchClient = async () => {
     if (self) return;
 
     const username = userstate.username;
+
+    if (message.startsWith('!mode')) {
+      handleModeChange(message, username);
+      return;
+    }
 
     if (currentMode === MODE_CHAOS) {
       playText({ username, message });
