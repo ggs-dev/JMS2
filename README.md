@@ -24,7 +24,7 @@ This project is a Twitch chat bot that converts chat messages into Text-to-Speec
 
 1. Clone the repository:
 
-`git clone https://github.com/Heavybob/jms2.git`
+`git clone https://github.com/ggs-dev/jms2.git`
 
 
 2. Navigate to the project directory:
